@@ -1,2 +1,3 @@
-# dual_priority_encoder
+# Dual Priority Encoder
 A  priority encoder that selects the first and second asserted bits
+This encoder is implemented using two 12 to 4 priority encoders, a 4 to 12 decoder and one internal wiring. The input of the first encoder is a 12 bit wire which will decide the value of first, this is then decoded into a 12 bit wire which will be put through an xor gate with the original req signal to remove the first asserted bit. This final 12 bit bus is used as input into the final priority encoder which will output the position of the next asserted bit. In this case because the input is 12 bits, I am using 4'b1111 to indicate that no bit is asserted for that output (first or second).
